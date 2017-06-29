@@ -1,0 +1,11 @@
+<?php
+include 'make.php';
+
+echo "\nGenerating to ". __dir__. '\\raw\\quotes.json';
+
+$combined_file = fopen('combined/quotes.json', 'w+');
+fwrite($combined_file, json_encode($collection, JSON_PRETTY_PRINT));
+fclose($combined_file);
+
+echo "\nGenerated a total of ", count($collection), ' quotes from ', count($authors), " authors\n";
+echo "\nCheers!\n";
