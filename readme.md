@@ -1,6 +1,6 @@
 # JSON collection of quotes
 
-A collection of quotes from different people in TEXT, JSON, and various arrays for different languages.
+A collection of quotes from different people in TEXT, JSON, and various arrays for different programming languages.
 
 ##### statistics
 
