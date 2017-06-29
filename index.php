@@ -1,16 +1,31 @@
 <?php
-include 'make.php';
+include 'init.php';
 
-$generate = new Generate(new RecursiveDirectoryIterator(__dir__. '\\raw'));
-$collection = $generate->getCollection();
-$authors = $generate->getAuthors();
+echo 'Generating to <strong>'. __dir__. '\\raw\\quotes.json</strong><br><br>';
 
-echo "Generating to <strong>". __dir__. '\\raw\\quotes.json</strong><br/>';
+// Generate text file
+if(true === ($textFile = Make::textFile($collection))) {
+  echo 'Generated TEXT file.<br>';
+} else {
+  echo '~ Failed to create TEXT file. '. $textFile. '<br>';
+}
 
-$combined_file = fopen('combined/quotes.json', 'w+');
-fwrite($combined_file, json_encode($collection, JSON_PRETTY_PRINT));
-fclose($combined_file);
+// Generate JSON file
+if(true === ($jsonFile = Make::jsonFile($collection))) {
+  echo 'Generated JSON file.<br>';
+} else {
+  echo '~ Failed to create JSON file. '. $jsonFile. '<br>';
+}
 
-echo "<br/>Generated a total of <strong>", count($collection), ' quotes<strong> from <strong>', count($authors), " authors</strong><br/>";
+/**
+ * Generate as various arrays
+ * JavaScript
+ * PHP
+ */
+if(true === ($variousArrays = Make::variousArrays($collection))) {
+  echo 'Generated as various arrays.<br>';
+} else {
+  echo '~ Failed to create various arrays. '. $variousArrays. '<br>';
+}
 
-echo '<strong>Cheers!</strong>';
+echo '<br/>Generated a total of <strong>', count($collection), ' quotes<strong> from <strong>', count($authors), ' authors</strong><br>';

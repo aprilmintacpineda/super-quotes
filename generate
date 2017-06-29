@@ -1,11 +1,31 @@
 <?php
-include 'make.php';
+include 'init.php';
 
-echo "\nGenerating to ". __dir__. '\\raw\\quotes.json';
+echo "\nGenerating to ". __dir__. "\\raw\\quotes.json\n\n";
 
-$combined_file = fopen('combined/quotes.json', 'w+');
-fwrite($combined_file, json_encode($collection, JSON_PRETTY_PRINT));
-fclose($combined_file);
+// Generate text file
+if(true === ($textFile = Make::textFile($collection))) {
+  echo "Generated TEXT file.\n";
+} else {
+  echo '~ Failed to create TEXT file. '. $textFile. "\n";
+}
+
+// Generate JSON file
+if(true === ($jsonFile = Make::jsonFile($collection))) {
+  echo "Generated JSON file.\n";
+} else {
+  echo '~ Failed to create JSON file. '. $jsonFile. "\n";
+}
+
+/**
+ * Generate as various arrays
+ * JavaScript
+ * PHP
+ */
+if(true === ($variousArrays = Make::variousArrays($collection))) {
+  echo "Generated as various arrays.\n";
+} else {
+  echo '~ Failed to create various arrays. '. $variousArrays. "\n";
+}
 
 echo "\nGenerated a total of ", count($collection), ' quotes from ', count($authors), " authors\n";
-echo "\nCheers!\n";
