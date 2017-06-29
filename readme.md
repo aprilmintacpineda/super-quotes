@@ -1,8 +1,16 @@
 # JSON collection of quotes
 
-A collection of __currently__
+A collection of quotes from different people in TEXT, JSON, and various arrays for different languages.
+
+##### statistics
+
 - 876 quotes
 - 773 authors
+
+###### language support
+
+- JavaScript
+- PHP (Associative and Numeric arrays)
 
 # Information about the machine used while creating this
 
@@ -25,6 +33,38 @@ php generate
 ```
 
 Output will be created at the **combined** directory or simply dowload from the **combined** directory.
+
+# Generates the following
+
+### JSON
+
+Contains all the quotes as a JSON file that has the following structure:
+
+```
+[
+  {
+    "quote": "This is a very wonderful quote.",
+    "name": "The Author"
+  },
+  {
+    "quote": "Another wonderful quote",
+    "name": "Another Author"
+  }
+]
+```
+
+### Text
+
+Contains all the quotes as a text file, one quote per line with the author after the `~` at the end of every quotes.
+
+### Various arrays
+
+###### PHP
+- `numeric array`, contains all the quotes as a numeric array, one quote per index of the array with the author after the `~` at the end of every quotes.
+- `associative array`, contains all the quotes as an associative array, one quote per index of the array with the keys `quote` for the quote body and `name` for the author's name.
+
+###### JavaScript
+- Contains all quotes as an array, one quote per index of the array with the author after the `~` at the end of every quotes.
 
 # Want to add more quotes?
 Put all your quotes in the **raw** directory as one of the following:
