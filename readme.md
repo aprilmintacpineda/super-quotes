@@ -24,7 +24,7 @@ cd super-quotes
 php generate
 ```
 
-Output will be created at the **combined** directory.
+Output will be created at the **combined** directory or simply dowload from the **combined** directory.
 
 # Want to add more quotes?
 Put all your quotes in the **raw** directory as one of the following:
