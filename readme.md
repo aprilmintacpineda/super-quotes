@@ -21,14 +21,19 @@ If it doesn't work on your machine, please open an issue and tell me about it.
 ```
 git clone https://github.com/four-eyes-04-04/super-quotes.git
 cd super-quotes
-php generate as:console
+php generate
 ```
 
 # Want to add more quotes?
 Put all your quotes in the **raw** directory as one of the following:
 
 ###### As text files
-Make sure that the format looks strictly like `This is a very wonderful quote. ~The Author`
+One quote per line and make sure that the format looks strictly like:
+
+```
+This is a very wonderful quote. ~The Author
+Another wonderful quote. ~Another Author
+```
 
 ###### As JSON
 Make sure that the structure looks strictly like the following:
@@ -38,6 +43,10 @@ Make sure that the structure looks strictly like the following:
   {
     "quote": "This is a very wonderful quote.",
     "name": "The Author"
+  },
+  {
+    "quote": "Another wonderful quote",
+    "name": "Another Author"
   }
 ]
 ```
