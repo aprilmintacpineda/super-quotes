@@ -51,7 +51,8 @@ Make sure that the structure looks strictly like the following:
 ]
 ```
 
-Then after doing so, just run `php generator as:console`.
+Then after doing so, just run `php generator` again to combine all the quotes in one JSON file.
+
 Do make pull requests to enlarge our collection of quotes, and update the credits section of this readme.
 
 # Credits: Quotes came from them.
