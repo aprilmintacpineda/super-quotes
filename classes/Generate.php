@@ -1,6 +1,4 @@
 <?php
-include_once 'config/dir.php';
-
 class Generate {
   protected $authors = [],
             $collection = [],

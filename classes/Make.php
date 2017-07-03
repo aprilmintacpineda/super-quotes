@@ -1,12 +1,10 @@
 <?php
-include_once 'config/dir.php';
-
 class Make {
   public static function jsonFile(Array $collection) {
     try {
-      if(!is_dir(dir['output'])) throw new Exception('Directory '. dir['output'] .' not found.');
+      if(!is_dir(Config::get('output'))) throw new Exception('Directory **'. Config::get('output') .'** not found.');
 
-      $combined_file = fopen(dir['output']. '\quotes.json', 'w+');
+      $combined_file = fopen(Config::get('output'). '\quotes.json', 'w+');
       fwrite($combined_file, json_encode($collection, JSON_PRETTY_PRINT));
       fclose($combined_file);
 
@@ -18,7 +16,7 @@ class Make {
 
   public static function textFile(Array $collection) {
     try {
-      if(!is_dir(dir['output'])) throw new Exception('Directory **'. dir['output'] .'** not found.');
+      if(!is_dir(Config::get('output'))) throw new Exception('Directory **'. Config::get('output') .'** not found.');
 
       $stringed = '';
 
@@ -26,7 +24,7 @@ class Make {
         $stringed .= $item['quote']. ' ~ '. $item['name']. "\n";
       }
 
-      $combined_file = fopen(dir['output']. '\quotes.txt', 'w+');
+      $combined_file = fopen(Config::get('output'). '\quotes.txt', 'w+');
       fwrite($combined_file, $stringed);
       fclose($combined_file);
 
@@ -38,7 +36,7 @@ class Make {
 
   public static function variousArrays(Array $collection) {
     try {
-      if(!is_dir(dir['output'])) throw new Exception('Directory '. dir['output'] .' not found.');
+      if(!is_dir(Config::get('output'))) throw new Exception('Directory **'. Config::get('output') .'** not found.');
 
       // PHP arrays
       $numeric = "// Numeric array of quotes\n// Each array is a quote\n// With the author after the `~`\n". '$numeric = ['. "\n";
@@ -62,15 +60,15 @@ class Make {
       $assoc = "<?php\n\n{$assoc}\n";
 
       // create PHP numeric arrays
-      $combined_file = fopen(dir['output']. '\quotes_numeric_array.php', 'w+');
+      $combined_file = fopen(Config::get('output'). '\quotes_numeric_array.php', 'w+');
       fwrite($combined_file, $numeric);
       fclose($combined_file);
       // create PHP associative arrays
-      $combined_file = fopen(dir['output']. '\quotes_assoc_array.php', 'w+');
+      $combined_file = fopen(Config::get('output'). '\quotes_assoc_array.php', 'w+');
       fwrite($combined_file, $assoc);
       fclose($combined_file);
       // create JavaScript array
-      $combined_file = fopen(dir['output']. '\quotes.js', 'w+');
+      $combined_file = fopen(Config::get('output'). '\quotes.js', 'w+');
       fwrite($combined_file, $javaScript);
       fclose($combined_file);
 
