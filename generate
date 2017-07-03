@@ -1,7 +1,7 @@
 <?php
 include_once 'init.php';
 
-echo "\nGenerating to ". __dir__. "\\builds\n\n";
+echo "\nGenerating to ". Config::get('output'). "\n\n";
 
 // Generate text file
 if(true === ($textFile = Make::textFile($collection))) {
