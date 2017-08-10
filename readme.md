@@ -1,4 +1,4 @@
-# JSON collection of quotes
+# Collection of quotes
 
 A collection of quotes from different people in TEXT, JSON, and various arrays for different programming languages.
 
