@@ -27,7 +27,7 @@ If it doesn't work on your machine, please open an issue and tell me about it.
 # Run this
 
 ```
-git clone https://github.com/four-eyes-04-04/super-quotes.git
+git clone https://github.com/aprilmintacpineda/super-quotes.git
 cd super-quotes
 php generate
 ```
@@ -106,7 +106,7 @@ Do make pull requests to enlarge our collection of quotes, and update the credit
 # {} with <3
 April Mintac Pineda
 
-- [Linkedin](https://www.linkedin.com/in/april-pineda/)
+- [Linkedin](https://www.linkedin.com/in/april-mintac-pineda/)
 - <aprilmintacpineda@gmail.com>
 
 Cheers!
