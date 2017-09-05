@@ -14,7 +14,7 @@ class Generate {
     $iterator = new RecursiveIteratorIterator($directory);
 
     foreach($iterator as $file) {
-      $target_file = @file_get_contents(dir['addends']. $file->getFileName());
+      $target_file = @file_get_contents(Config::get('addends'). $file->getFileName());
 
       if($target_file) {
         // convert the file contents to json
